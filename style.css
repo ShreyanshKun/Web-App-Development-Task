@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #e3f2fd, #c5cae9);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a237e;
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 70vw;
+    height: 40vh;
+    margin-top: 10vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-bar {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.calendar-day {
+    min-width: 60px;
+    text-align: center;
+    background-color: #c5cae9;
+    color: #1a237e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+    min-width: 80px;
+    padding: 12px 8px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+.calendar-day.today {
+    background-color: #3949ab;
+    color: white;
+}
+
+.calendar-day.selected {
+    background-color: #1a237e;
+    color: white;
+}
+
+#taskTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    gap: 2vh;
+}
+
+.box {
+    position: relative;
+    min-height: 5vh;
+    height: auto;
+    width: 80%;
+    border-radius: 3mm;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: white;
+   
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button {
+    margin-top: 2vh;
+}
+
+.popupmain {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+.content form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+    margin-top: 20px;
+}
+
+.content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    background: #e8eaf6;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.content input[type="date"],
+.content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.content h3 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a237e;
+}
+
+#submitBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #3949ab;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-top: 15px;
+}
+
+#submitBtn img {
+    width: 20px;
+    height: 20px;
+}
+
+#submitBtn:hover {
+    background-color: #5c6bc0;
+    transform: translateY(-1px);
+}
+
+#mainbutton {
+    background-color: #96bee9;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    /* -webkit-appearance: none;
+  -moz-appearance: none; */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #3949ab;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #3949ab;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+#box div span {
+    margin-left: 20px;
+}
+
+#box div span:hover {
+    background-color: #c5daf1;
+    border-radius: 5px;
+}
+.header-img {
+width: 100vw;         
+  height: 40vh;         
+  object-fit: contain; 
+  display: block;
+  margin: 0 auto; 
+}
+/* Mobile (phones) - max width 600px */
+@media (max-width: 768px) {
+  .img {
+    width: 90vw;
+    height: 20vh;
+    margin-top: 5vh;
+  }
+
+  .calendar-bar {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .calendar-day {
+    min-width: 60px;
+    padding: 10px 6px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  #taskTitle h1.ta {
+    font-size: 20px;
+  }
+
+  .box {
+    width: 95%;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #mainbutton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .content h3 {
+    font-size: 28px;
+  }
+
+  #submitBtn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  input[type="checkbox"]::before {
+    top: 3px;
+    left: 3px;
+    width: 7px;
+    height: 7px;
+  }
+
+  #box div span {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+ 
+  .credits {
+    font-size: 12px;
+    margin-top: 20px;
+  
+}
+
+}
+.credits {
+  text-align: center;
+  font-size: 34px;
+  color: #555;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #1a237e;
+  font-weight: 400;
+}
